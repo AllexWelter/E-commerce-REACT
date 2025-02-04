@@ -1,0 +1,39 @@
+.div-competencias {
+    background-color: red;
+    padding: 25px;
+    margin: 10px;    
+}
+
+.meuP {
+    background-color: yellow;
+    color: blue;
+}
+
+.p1 {
+    background-color: aqua;
+}
+
+.p2 {
+    background-color: beige;
+    color: blue;
+}
+
+.p3 {
+    background-color: cadetblue;
+    color: coral;
+}
+
+.p4 {
+    background-color: darkturquoise;
+    color: darkgoldenrod;
+}
+
+.p5 {
+    background-color: dodgerblue;
+    color: darkorange;
+}
+
+.p6 {
+    background-color: deeppink;
+    color: springgreen;
+}
