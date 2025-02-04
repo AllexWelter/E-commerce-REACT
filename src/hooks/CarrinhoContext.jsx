@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import { toast } from "react-toastify"
 
 
 export const CarrinhoContext = createContext()
@@ -26,6 +27,24 @@ function salvarProduto(lista) {
 }
 
 const adicionarCarrinho = async (produto) => {
+
+    const qtdProdutosNoCarrinho = listaProdutosCarrinho.filter(
+        (item) => item.idProduto == produto.idProduto
+    )
+
+    if (qtdProdutosNoCarrinho.length > 0) {
+        return toast.error("Produto já está no seu carrinho", {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                })
+    }
+
     const listaDeProdutosAtualizado = [produto, ...listaProdutosCarrinho]
     salvarProduto(listaDeProdutosAtualizado)
 }

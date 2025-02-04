@@ -61,6 +61,7 @@ function GerenciarLogin() {
             >
                 {numeroProdutosCarrinho}
             </Badge>
+            <i className="fa fa-shopping-cart fa-2x"> </i>
             </a>
             </Col>
             <Col md={7}>
