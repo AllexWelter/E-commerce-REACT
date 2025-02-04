@@ -4,6 +4,7 @@ import { Produto } from "../pages/Produto";
 import { Home } from "../pages/Home";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Login } from "../pages/Login";
+import { Carrinho } from "../pages/Carrinho";
 
 
 
@@ -14,6 +15,7 @@ export function RouteApp() {
         <Route path="/" element={<Home />} />    
         <Route path="/produtos" element={<ListaProdutos />} />
         <Route path="/login" element={<Login />}/>
+        <Route path="/carrinho" element={<Carrinho />} />
         </Routes>
         </BrowserRouter>
 
