@@ -11,10 +11,10 @@ function App() {
   return (
     <>
 
-      <ToastContainer/>
+      
       <CarrinhoContextProvider>
       <RouteApp/>
-
+      <ToastContainer/>
       </CarrinhoContextProvider>
       
     </>
