@@ -1,13 +1,20 @@
-import { useEffect, useState } from "react";
-import { Button, Col, Row } from "react-bootstrap";
+import { useContext, useEffect, useState } from "react";
+import { Badge, Button, Col, Row } from "react-bootstrap";
 
 function GerenciarLogin() {
 
     const [token, setToken] = useState()
     const [nomeUsuario, setNomeUsuario] = useState()
     const [emailUsuario, setEmailUsuario] = useState()
-    
 
+    const [numeroProdutosCarrinho, setNumeroProdutosCarrinho] = useState(0)
+    const {listaProdutosCarrinho} = useContext
+
+    useEffect(() => {
+        const quantidadeProdutos = listaProdutosCarrinho
+        setNumeroProdutosCarrinho(quantidadeProdutos)
+    }, [listaProdutosCarrinho])
+    
     useEffect(() => {
         pegarDadosLocalStorage()
     }, [])
@@ -43,6 +50,19 @@ function GerenciarLogin() {
 
     return (
         <Row>
+            <Col md={2}>
+            <a href="/carrinho">
+            <Badge style={{
+                position: "absolute",
+                marginLeft: "20px",
+                marginTop: "-8px"
+            }}
+            bg="success"
+            >
+                {numeroProdutosCarrinho}
+            </Badge>
+            </a>
+            </Col>
             <Col md={7}>
             <i className="fa fa-user">{nomeUsuario}</i>
             <i className="fa fa-at">{emailUsuario}</i>

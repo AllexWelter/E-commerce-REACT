@@ -4,11 +4,12 @@ import { CarrinhoContext } from "../hooks/CarrinhoContext"
 
 
 
-function CardProduto({ nome, preco, descricao, linkImagem }) {
+function CardProduto({ idProduto, nome, preco, descricao, linkImagem }) {
     const {adicionarCarrinho} = useContext(CarrinhoContext)
 
 
     function adicionarNoCarrinho(
+        idProduto,
         nomeProduto,
         precoProduto,
         descricaoProduto,
@@ -16,6 +17,7 @@ function CardProduto({ nome, preco, descricao, linkImagem }) {
 
     ) {
         adicionarCarrinho({
+            idProduto,
             nomeProduto,
             precoProduto,
             descricaoProduto,
@@ -35,7 +37,7 @@ function CardProduto({ nome, preco, descricao, linkImagem }) {
                 <Card.Text>{descricao}</Card.Text>
                 <Button variant="primary"
                 onClick={() =>
-                    adicionarNoCarrinho(nome, preco, descricao, linkImagem)    
+                    adicionarNoCarrinho(idProduto, nome, preco, descricao, linkImagem)    
                 }
                 >Detalhes</Button>
             </Card.Body>

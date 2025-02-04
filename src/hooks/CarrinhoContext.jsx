@@ -30,11 +30,15 @@ const adicionarCarrinho = async (produto) => {
     salvarProduto(listaDeProdutosAtualizado)
 }
 
-// function removerProduto()
+function removerProduto(idProduto) {
+    const listaDeProdutosAtualizado = listaProdutosCarrinho.filter((item) => item.idProduto != idProduto)
+
+    salvarProduto(listaDeProdutosAtualizado)
+}
 
    
     return (
-        <CarrinhoContext.Provider value={{listaProdutosCarrinho, adicionarCarrinho}}>
+        <CarrinhoContext.Provider value={{listaProdutosCarrinho, adicionarCarrinho, removerProduto}}>
 
         {children}            
 

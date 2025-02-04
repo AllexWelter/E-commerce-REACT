@@ -1,10 +1,10 @@
 import { useContext, useEffect, useState } from "react";
-import { Col, Navbar, Row, Table } from "react-bootstrap";
+import { Button, Col, Navbar, Row, Table } from "react-bootstrap";
 import { CarrinhoContext } from "../hooks/CarrinhoContext";
 
 
 function Carrinho() {
-    const {listaProdutosCarrinho, removerProduto} = useContext(CarrinhoContext)
+    const { listaProdutosCarrinho, removerProduto } = useContext(CarrinhoContext)
     const [produtosCarrinho, setProdutosCarrinho] = useState([])
 
     useEffect(() => {
@@ -23,6 +23,7 @@ function Carrinho() {
                     <Table striped bordered hover>
                         <thead>
                             <tr>
+                                <th>ID</th>
                                 <th>Nome</th>
                                 <th>Preço</th>
                                 <th>Descrição</th>
@@ -30,7 +31,27 @@ function Carrinho() {
                             </tr>
                         </thead>
                         <tbody>
+                            {produtosCarrinho.map((produtoCarrinho, index) => {
+                                return (
+                                    <tr>
+                                        <td>{produtoCarrinho.idProduto}</td>
+                                        <td>{produtoCarrinho.nomeProduto}</td>
+                                        <td>{produtoCarrinho.precoProduto}</td>
+                                        <td>{produtoCarrinho.descricaoProduto}</td>
+                                        <td>
+                                            <Button onClick={() =>
+                                                removerProduto(produtoCarrinho.idProduto)
+                                            }
+                                            variant="danger"
+                                            >   
+                                                Remover       
+                                            </Button>
+                                        </td>            
+                                    </tr>
+                                )
+                            }
 
+                            )}
                         </tbody>
                     </Table>
                 </Row>
