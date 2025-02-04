@@ -13,10 +13,10 @@ const {contadorCarrinho}= useContext(CarrinhoContext)
         <Container>
             <Navbar bg="dark" data-bs-theme="dark">
                 <Container>
-                    <Navbar.Brand href="#home">--- {contadorCarrinho}  ---E-Commerce</Navbar.Brand>
+                    <Navbar.Brand href="#home">E-Commerce</Navbar.Brand>
                     <Nav className="me-auto">
                         <Nav.Link href="/home">Home</Nav.Link>
-                        <Nav.Link href="/produtos">Produtos</Nav.Link>
+                        <Nav.Link href="/produtos">Produtos {contadorCarrinho}</Nav.Link>
                     </Nav>
                     <Navbar.Collapse className="justify-content-end">
                         <Navbar.Text>

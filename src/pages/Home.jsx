@@ -13,7 +13,9 @@ function Home() {
             <>
             <NavBar />
             
-                <button onClick={() => setContadorCarrinho((valorAtual)=> valorAtual + 1 )}>SOMAR 1</button>
+                <button onClick={() => setContadorCarrinho((valorAtual)=> valorAtual + 1 )}>SOMAR</button>
+
+                <button onClick={() => setContadorCarrinho((valorAtual)=> valorAtual - 1)}>SUBTRAIR</button>
             
             <Container>
                 <CarouselAnuncios />
