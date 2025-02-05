@@ -36,30 +36,30 @@ function ListaProdutos() {
   }, [])
 
 
-    return (
-      <>
-        <Row className="justify-content-md-center">
-          <Col md={2}>
-            <h1>Lista de Produtos</h1>
-          </Col>
-        </Row>
-  
-        <Row className="justify-content-md-center">
-          {produtos.map(({ title, price, image, category }) => {
-            return (
-              <>
-                <CardProduto
-                  nome={title}
-                  preco={price}
-                  linkImagem={image}
-                  descricao={category}
-                />
-              </>
-            );
-          })}
-        </Row>
-      </>
-    );
+  return (
+    <>
+      <Row className="justify-content-md-center">
+        <Col md={4}>
+          <h1>Lista de Produtos</h1>
+        </Col>
+      </Row>
+      <Row>
+        {produtos.map((produto, index) => {
+          return (
+            <Col className="m-2" key={index}>
+              <CardProduto
+                idProduto={produto.id}
+                nome={produto.title}
+                preco={produto.price}
+                linkImagem={produto.image}
+                descricao={produto.category}
+              />
+            </Col>
+          );
+        })}
+      </Row>
+    </>
+  );
 }
 
 export { ListaProdutos }
