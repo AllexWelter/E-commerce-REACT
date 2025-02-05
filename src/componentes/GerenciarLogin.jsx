@@ -3,9 +3,9 @@ import { Badge, Button, Col, Row } from "react-bootstrap";
 
 function GerenciarLogin() {
 
-    const [token, setToken] = useState()
-    const [nomeUsuario, setNomeUsuario] = useState()
-    const [emailUsuario, setEmailUsuario] = useState()
+    const [token, setToken] = useState(null)
+    const [nomeUsuario, setNomeUsuario] = useState(null)
+    const [emailUsuario, setEmailUsuario] = useState(null)
 
     const [numeroProdutosCarrinho, setNumeroProdutosCarrinho] = useState(0)
     const {listaProdutosCarrinho} = useContext

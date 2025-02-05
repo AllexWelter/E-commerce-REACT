@@ -9,14 +9,14 @@ function Home() {
     
 
     return (
-            <>
-            <NavBar/>
+            <NavBar>
+            
             <Container>
                 <CarouselAnuncios />
                 <ListaProdutos />
             </Container>
             
-            </>    
+            </NavBar>    
     )
 }
 
