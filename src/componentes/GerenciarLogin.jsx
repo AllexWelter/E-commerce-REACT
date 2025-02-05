@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Badge, Button, Col, Row } from "react-bootstrap";
+import { CarrinhoContext } from "../hooks/CarrinhoContext";
 
 function GerenciarLogin() {
 
@@ -8,10 +9,10 @@ function GerenciarLogin() {
     const [emailUsuario, setEmailUsuario] = useState(null)
 
     const [numeroProdutosCarrinho, setNumeroProdutosCarrinho] = useState(0)
-    const {listaProdutosCarrinho} = useContext
+    const {listaProdutosCarrinho} = useContext(CarrinhoContext)
 
     useEffect(() => {
-        const quantidadeProdutos = listaProdutosCarrinho
+        const quantidadeProdutos = listaProdutosCarrinho.length
         setNumeroProdutosCarrinho(quantidadeProdutos)
     }, [listaProdutosCarrinho])
     

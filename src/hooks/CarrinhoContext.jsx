@@ -7,6 +7,9 @@ export const CarrinhoContext = createContext()
 function CarrinhoContextProvider({ children }) {
 const [listaProdutosCarrinho, setlistaProdutosCarrinho ] = useState([])
 
+
+
+
 useEffect(() => {
     buscarProdutosLocalStorage()
 }, [])
