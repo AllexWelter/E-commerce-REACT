@@ -14,7 +14,7 @@ function ListaProdutos() {
   
         setProdutos(data);
       } catch (error) {
-        mensagemDeErro("Não foi possivel buascar os produtos");
+        mensagemDeErro("Não foi possivel buscar os produtos");
       }
     }
 

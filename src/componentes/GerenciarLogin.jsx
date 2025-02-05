@@ -22,7 +22,7 @@ function GerenciarLogin() {
     function pegarDadosLocalStorage() {
         const token = localStorage.getItem("token")
         const nomeUsuario = localStorage.getItem("nomeUsuario")
-        const emailUsuario = localStorage.getItem("emailUSuario")
+        const emailUsuario = localStorage.getItem("emailUsuario")
         setToken(token)
         setNomeUsuario(nomeUsuario)
         setEmailUsuario(emailUsuario)

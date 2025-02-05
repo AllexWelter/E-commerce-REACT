@@ -40,14 +40,16 @@ function CardProduto({ idProduto, nome, preco, descricao, linkImagem }) {
             <Card.Img variant="top" src={linkImagem} />
             <Card.Body>
                 <Card.Title>
-                {nome} - R$:{preco}
+                {nome} - R$: {preco}
                 </Card.Title>
                 <Card.Text>{descricao}</Card.Text>
                 <Button variant="primary"
                 onClick={() =>
                     adicionarNoCarrinho(idProduto, nome, preco, descricao, linkImagem)    
                 }
-                >Detalhes</Button>
+            >
+                    ADICIONAR
+                </Button>
             </Card.Body>
         </Card>
     )

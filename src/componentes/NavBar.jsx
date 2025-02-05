@@ -7,11 +7,11 @@ import { CarrinhoContext } from "../hooks/CarrinhoContext";
 
 
 
-function NavBar() {
+function NavBar(props) {
 const {contadorCarrinho}= useContext(CarrinhoContext)
     return (
         <Container>
-            <Navbar bg="dark" data-bs-theme="dark">
+            <Navbar bg="dark" data-bs-theme="dark" variant="dark" fixed="top">
                 <Container>
                     <Navbar.Brand href="#home">E-Commerce</Navbar.Brand>
                     <Nav className="me-auto">
@@ -25,7 +25,7 @@ const {contadorCarrinho}= useContext(CarrinhoContext)
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-            <div style={{marginTop: "100px"}}></div>
+            <div style={{marginTop: "100px"}}>{props.children}</div>
         </Container>
     )
 }
