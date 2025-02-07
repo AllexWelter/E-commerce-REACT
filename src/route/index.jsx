@@ -10,6 +10,7 @@ import { Carrinho } from "../pages/Carrinho";
 
 export function RouteApp() {
     return (
+        
         <BrowserRouter>
         <Routes>
         <Route path="/" element={<Home />} />    
